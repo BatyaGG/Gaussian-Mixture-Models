@@ -49,7 +49,6 @@ def plotGMM(Mu, Sigma, color,display_mode, ax):
             ax.plot(Mu[0,:], Mu[1,:], "x",color = color)
         # ax.set_xlim(min(minsx),max(maxsx))
         # ax.set_ylim(min(minsy),max(maxsy))
-        plt.show()
     elif display_mode == 2:
         nbDrawingSeg = 40
         t = np.linspace(-np.pi, np.pi, nbDrawingSeg)
@@ -85,4 +84,3 @@ def plotGMM(Mu, Sigma, color,display_mode, ax):
         ax.plot(Mu[0, :], Mu[1, :], "-",lw = 3, color=color)
         # ax.set_xlim(min(minsx), max(maxsx))
         # ax.set_ylim(min(minsy), max(maxsy))
-        plt.show()
