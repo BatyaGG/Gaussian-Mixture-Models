@@ -1,6 +1,6 @@
 import numpy as np
 from scipy.cluster.vq import kmeans,vq
-def EM_init_kmeans(Data, nbStates):
+def EM_init(Data, nbStates):
     nbVar, nbData = np.shape(Data)
     Priors = np.ndarray(shape = (1, nbStates))
     Sigma = np.ndarray(shape = (nbVar, nbVar, nbStates))

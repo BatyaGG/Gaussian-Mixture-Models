@@ -1,7 +1,7 @@
-from EM_init_kmeans import *
+from EM_init import *
 from EM import *
 from plotGMM import *
-from GMR import *
+from gmr import *
 from matplotlib import pyplot as plt
 import numpy as np
 
@@ -13,12 +13,12 @@ class GMM_GMR(object):
 
     def fit(self, data):
         self.data = data
-        Priors, Mu, Sigma = EM_init_kmeans(data, self.numbefOfStates)
+        Priors, Mu, Sigma = EM_init(data, self.numbefOfStates)
         self.Priors, self.Mu, self.Sigma, self.Pix = EM(data, Priors, Mu, Sigma)
         nbVar, nbData = np.shape(data)
         self.expData = np.ndarray(shape=(nbVar, self.numbefOfDots))
         self.expData[0, :] = np.linspace(1, np.max(data[0, :]), self.numbefOfDots)
-        self.expData[1:nbVar, :], self.expSigma = GMR(self.Priors, self.Mu, self.Sigma, self.expData[0, :], 0, np.arange(1, nbVar))
+        self.expData[1:nbVar, :], self.expSigma = gmr(self.Priors, self.Mu, self.Sigma, self.expData[0, :], 0, np.arange(1, nbVar))
 
     def plot(self, xAxis = 0, yAxis = 1, plotType = "Clusters", ax = plt, dataColor = [0, 0.8, 0.7],
              clusterColor = [0, 0.8, 0], regressionColor = [0,0,0.8]):

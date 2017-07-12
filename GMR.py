@@ -1,7 +1,7 @@
 import numpy as np
 import sys
 from gaussPDF import gaussPDF
-def GMR(Priors, Mu, Sigma, x, input, output):
+def gmr(Priors, Mu, Sigma, x, input, output):
     lo = np.size(output)
     nbData = np.size(x)
     nbVar = np.size(Mu, 0)
