@@ -4,8 +4,6 @@ from plotGMM import *
 from GMR import *
 from matplotlib import pyplot as plt
 import numpy as np
-import warnings
-warnings.filterwarnings("ignore")
 
 class GMM_GMR(object):
 
@@ -25,13 +23,15 @@ class GMM_GMR(object):
     def plot(self, xAxis = 0, yAxis = 1, plotType = "Clusters", ax = plt, dataColor = [0, 0.8, 0.7],
              clusterColor = [0, 0.8, 0], regressionColor = [0,0,0.8]):
         xlim = [self.data[xAxis,:].min() - (self.data[xAxis,:].max() - self.data[xAxis,:].min())*0.1, self.data[xAxis,:].max() + (self.data[xAxis,:].max() - self.data[xAxis,:].min())*0.1]
-        ylim = [self.data[yAxis,:].min() - (self.data[xAxis,:].max() - self.data[xAxis,:].min())*0.1, self.data[yAxis,:].max() + (self.data[xAxis,:].max() - self.data[xAxis,:].min())*0.1]
+        ylim = [self.data[yAxis,:].min() - (self.data[yAxis,:].max() - self.data[yAxis,:].min())*0.1, self.data[yAxis,:].max() + (self.data[yAxis,:].max() - self.data[yAxis,:].min())*0.1]
         if plotType == "Data":
             ax.plot(self.data[xAxis,:], self.data[yAxis,:],'.', color=dataColor)
             plt.xlim(xlim)
             plt.ylim(ylim)
         elif plotType == "Clusters":
-            plotGMM(self.Mu, self.Sigma, clusterColor, 1, ax)
+            rows = np.array([xAxis, yAxis])
+            cols = np.arange(0, self.numbefOfStates, 1)
+            plotGMM(self.Mu[np.ix_(rows, cols)], self.Sigma[np.ix_(rows, rows, cols)], [0, 0.8, 0], 1, ax)
             plt.xlim(xlim)
             plt.ylim(ylim)
         elif plotType == "Regression":
