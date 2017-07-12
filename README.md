@@ -1,11 +1,19 @@
 # Gaussian-Mixture-Models
-Python implementation of Gaussian Mixture Models and Gaussian Mixture Regression algorithms with examples and data files.
-All math and concepts are referred from several sources including:
+Python implementation of Gaussian Mixture Models(GMM) and Gaussian Mixture Regression(GMR) algorithms with 
+examples and data files. GMM is a soft clustering algorithm which considers data as finite gaussian distributions
+with unknown parameters. Current approach uses Expectation-Maximization(EM) algorithm to find gaussian states parameters.
+EM is an iterative algorithm which converges to true gaussian parameters and stopped by log-likelihood threshold or
+iteration number limit. To initialize gaussian parameters k-means clustering algorithm is used. After GMM is fitted,
+the model is used to fit GMR to retrieve output data by specified inputs.
+
+All math and concepts are referred mainly from the book:
 
 Calinon, S. (2009)
 Robot Programming by Demonstration: A Probabilistic Approach
 EPFL Press ISBN 978-2-940222-31-5, CRC Press ISBN 978-1-4398-0867-2.
 http://calinon.ch/paper6001.htm
+
+Additional sources:
 
 Tsishchanka, K.
 Elementary Statistics: Chapter 9
