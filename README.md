@@ -41,12 +41,21 @@ Report me to b.saduanov@gmail.com if you have any problems.
 # Usage
 To use GMM_GMR algorithms copy all python files to your folder. In your main script
 file import GMM_GMR class by writing "from GMM_GMR import GMM_GMR". To create instance
-of GMM_GMR just call its constructor with two parameters, for example 
+of GMM_GMR just call its constructor with one parameters which defines number of clusters, for example:
 
-"gmm = GMM_GMR(4, 100)". 
+gmm = GMM_GMR(4)
 
-Firts parameter is a number
-of clusters to be used and second is number of data points to be created in regression.
-To fit data to GMR use method "fit(numpy.array: data)". Data should be of numpy.array(type = float) type,
-and has dimension of NxM, where N is a number of features and M is a number of recordings or data points. Data matrix
-should have first row as time series variable. Regression considers first row as independent input variable and other rows as dependent (on first row) output variables. To predict outputs, create one dimensional input array A and call predict(np.array: input) function passing A as an argument to this method. To plot 
+To fit data to GMR use method 
+
+fit(numpy.array: data)
+
+Data should be of numpy.array(type = float) type, and has dimension of NxM, where N is a number of features and M is a number of recordings or data points. Data matrix should have first row as time series variable. Regression considers first row as independent input variable and other rows as dependent (on first row) output variables. To predict outputs, create one dimensional input array A and call 
+
+predict(np.array: input)
+
+function passing A as an argument to this method. To plot clusters or predicted regression data use plot function which has 7 parameters which are predefined already and they are:
+
+xAxis = 0, yAxis = 1, plotType = "Clusters", ax = plt, dataColor = [0, 0.8, 0.7], clusterColor = [0, 0.8, 0], regressionColor = [0,0,0.8]
+
+where 'xAxis' and 'yAxis' parameters are integers representing row index of Data matrix to be plotted on x and y axes respectively, 'plotType' is a string to choose from several possible plot types which are: "Data", "Clusters" and "Regression", 'ax' is a matplotlib plot object representing pyplot frame on which current plot should be drawn, 'dataColor', 'clusterColor' and 'regressionColor' parameters are lists representing [r, g, b] colors of data, cluster and regression plot colors respectively.
+
