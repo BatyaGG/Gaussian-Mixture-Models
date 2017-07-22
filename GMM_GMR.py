@@ -7,18 +7,23 @@ import numpy as np
 
 class GMM_GMR(object):
 
-    def __init__(self, numberOfStates, numberOfDots):
+    def __init__(self, numberOfStates):
         self.numbefOfStates = numberOfStates
-        self.numbefOfDots = numberOfDots
 
     def fit(self, data):
         self.data = data
         Priors, Mu, Sigma = EM_init(data, self.numbefOfStates)
         self.Priors, self.Mu, self.Sigma, self.Pix = EM(data, Priors, Mu, Sigma)
-        nbVar, nbData = np.shape(data)
-        self.expData = np.ndarray(shape=(nbVar, self.numbefOfDots))
-        self.expData[0, :] = np.linspace(1, np.max(data[0, :]), self.numbefOfDots)
-        self.expData[1:nbVar, :], self.expSigma = GMR(self.Priors, self.Mu, self.Sigma, self.expData[0, :], 0, np.arange(1, nbVar))
+
+    def predict(self, inputMat):
+        nbVar, nbData = np.shape(self.data)
+        self.expData = np.ndarray(shape=(nbVar, np.size(inputMat)))
+        self.expData[0, :] = inputMat
+        self.expData[1:nbVar, :], self.expSigma = GMR(self.Priors, self.Mu, self.Sigma, self.expData[0, :], 0,
+                                                      np.arange(1, nbVar))
+
+    def getPredictedMatrix(self):
+        return self.expData
 
     def plot(self, xAxis = 0, yAxis = 1, plotType = "Clusters", ax = plt, dataColor = [0, 0.8, 0.7],
              clusterColor = [0, 0.8, 0], regressionColor = [0,0,0.8]):
@@ -37,7 +42,7 @@ class GMM_GMR(object):
         elif plotType == "Regression":
             rows = np.array([xAxis, yAxis])
             rows2 = np.array([yAxis - 1, yAxis - 1])
-            cols = np.arange(0, self.numbefOfDots, 1)
+            cols = np.arange(0, self.expData.shape[1], 1)
             cols = cols.astype(int)
             plotGMM(self.expData[np.ix_(rows, cols)], self.expSigma[np.ix_(rows2, rows2, cols)], regressionColor, 2, ax)
             plt.xlim(xlim)

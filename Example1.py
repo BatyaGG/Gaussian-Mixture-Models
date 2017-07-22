@@ -5,11 +5,14 @@ import numpy as np
 if __name__ == "__main__":
     data = np.loadtxt("data.txt", delimiter=',')
     data = data[:, 0:2].T
-    gmm = GMM_GMR(4, 100)
+    gmm = GMM_GMR(4)
     gmm.fit(data)
+    timeInput = np.linspace(1, np.max(data[0, :]), 100)
+    gmm.predict(timeInput)
     fig = plt.figure()
 
     ax1 = fig.add_subplot(221)
+    print type(ax1)
     plt.title("Data")
     gmm.plot(ax=ax1, plotType="Data")
 
@@ -25,4 +28,6 @@ if __name__ == "__main__":
     plt.title("Clusters + Regression")
     gmm.plot(ax=ax4, plotType="Clusters")
     gmm.plot(ax=ax4, plotType="Regression")
+    predictedMatrix = gmm.getPredictedMatrix()
+    print predictedMatrix
     plt.show()
