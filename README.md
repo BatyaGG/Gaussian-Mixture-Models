@@ -41,9 +41,12 @@ Report me to b.saduanov@gmail.com if you have any problems.
 # Usage
 To use GMM_GMR algorithms copy all python files to your folder. In your main script
 file import GMM_GMR class by writing "from GMM_GMR import GMM_GMR". To create instance
-of GMM_GMR just call its constructor with two parameters, for example "gmm = GMM_GMR(4, 100)". Firts parameter is a number
+of GMM_GMR just call its constructor with two parameters, for example 
+
+"gmm = GMM_GMR(4, 100)". 
+
+Firts parameter is a number
 of clusters to be used and second is number of data points to be created in regression.
-Algorithm does clustering and regression by one method "fit(numpy.array: data)". Data should be of numpy.array(type = float) type,
+To fit data to GMR use method "fit(numpy.array: data)". Data should be of numpy.array(type = float) type,
 and has dimension of NxM, where N is a number of features and M is a number of recordings or data points. Data matrix
-should have first row as time series variable. Regression considers first row as independent input variable and other rows as
-dependent (on first row) output variables.
+should have first row as time series variable. Regression considers first row as independent input variable and other rows as dependent (on first row) output variables. To predict outputs, create one dimensional input array A and call predict(np.array: input) function passing A as an argument to this method. To plot 
