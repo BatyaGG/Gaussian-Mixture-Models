@@ -1,11 +1,17 @@
 import numpy as np
-from scipy.cluster.vq import kmeans,vq
+
+def kMeans(X, K, maxIters = 30):
+    centroids = X[np.random.choice(np.arange(len(X)), K), :]
+    for i in range(maxIters):
+        C = np.array([np.argmin([np.dot(x_i-y_k, x_i-y_k) for y_k in centroids]) for x_i in X])
+        centroids = [X[C == k].mean(axis = 0) for k in range(K)]
+    return np.array(centroids) , C
+
 def EM_init(Data, nbStates):
     nbVar, nbData = np.shape(Data)
     Priors = np.ndarray(shape = (1, nbStates))
     Sigma = np.ndarray(shape = (nbVar, nbVar, nbStates))
-    Centers, _ = kmeans(np.transpose(Data), nbStates)
-    Data_id, _ = vq(np.transpose(Data), Centers)
+    Centers, Data_id = kMeans(np.transpose(Data), nbStates)
     Mu = np.transpose(Centers)
     for i in range (0,nbStates):
         idtmp = np.nonzero(Data_id==i)
