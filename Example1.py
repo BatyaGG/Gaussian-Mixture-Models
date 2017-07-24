@@ -1,9 +1,7 @@
 from GMM_GMR import GMM_GMR
 from matplotlib import pyplot as plt
 import numpy as np
-import time
 
-start_time = time.time()
 if __name__ == "__main__":
     data = np.loadtxt("data.txt", delimiter=',')
     data = data[:, 0:2].T
@@ -31,6 +29,5 @@ if __name__ == "__main__":
     gmm.plot(ax=ax4, plotType="Clusters")
     gmm.plot(ax=ax4, plotType="Regression")
     predictedMatrix = gmm.getPredictedMatrix()
-    # print predictedMatrix
-    print("--- %s seconds ---" % (time.time() - start_time))
+    print predictedMatrix
     plt.show()

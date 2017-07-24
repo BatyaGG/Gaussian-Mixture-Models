@@ -39,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Example1.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Example1.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Example1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="34" column="60" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
+            <state relative-caret-position="51">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -51,7 +51,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EM_init.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EM_init.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EM_init.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -85,8 +85,8 @@
         <option value="$PROJECT_DIR$/data3.txt" />
         <option value="$PROJECT_DIR$/GMM_GMR.py" />
         <option value="$PROJECT_DIR$/Example2.py" />
-        <option value="$PROJECT_DIR$/Example1.py" />
         <option value="$PROJECT_DIR$/EM_init.py" />
+        <option value="$PROJECT_DIR$/Example1.py" />
       </list>
     </option>
   </component>
@@ -840,21 +840,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Example1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="34" column="60" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EM_init.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Example1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
