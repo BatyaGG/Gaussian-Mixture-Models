@@ -1,4 +1,7 @@
 # Gaussian-Mixture-Models
+
+![alt text](https://raw.githubusercontent.com/BatyaGG/Gaussian-Mixture-Models/master/figure_1-1.png)
+
 Python implementation of Gaussian Mixture Regression(GMR) and Gaussian Mixture Model(GMM) algorithms with 
 examples and data files. GMM is a soft clustering algorithm which considers data as finite gaussian distributions
 with unknown parameters. Current approach uses Expectation-Maximization(EM) algorithm to find gaussian states parameters.
