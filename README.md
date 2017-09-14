@@ -33,7 +33,6 @@ Clone or download the project
 Install following packages:
 numpy <1.11.3>,
 matplotlib <1.5.3>,
-scipy <0.16.1>
 
 Other versions of the packages were not tested, but higher versions are welcome.
 Report me to b.saduanov@gmail.com if you have any problems.
