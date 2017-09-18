@@ -9,12 +9,15 @@ EM is an iterative algorithm which converges to true gaussian parameters and sto
 iteration number limit. To initialize gaussian parameters k-means clustering algorithm is used. After GMM is fitted,
 the model is used to fit GMR to retrieve output features by time input.
 
-All math and concepts are referred mainly from the book:
+All math and concepts are referred from the book and MATLAB implementation by professor Sylvain Calinon (http://calinon.ch):
 
 Calinon, S. (2009)
 Robot Programming by Demonstration: A Probabilistic Approach
 EPFL Press ISBN 978-2-940222-31-5, CRC Press ISBN 978-1-4398-0867-2.
 http://calinon.ch/paper6001.htm
+
+MATLAB implementation:
+https://www.mathworks.com/matlabcentral/fileexchange/19630-gaussian-mixture-model--gmm--gaussian-mixture-regression--gmr-
 
 Additional sources:
 
