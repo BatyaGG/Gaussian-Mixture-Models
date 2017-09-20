@@ -9,7 +9,7 @@ EM is an iterative algorithm which converges to true gaussian parameters and sto
 iteration number limit. To initialize gaussian parameters k-means clustering algorithm is used. After GMM is fitted,
 the model is used to fit GMR to retrieve output features by time input.
 
-All math and concepts are referred from the book and MATLAB implementation by professor Sylvain Calinon (http://calinon.ch):
+All math and concepts are referred from the book and MATLAB implementation both by professor Sylvain Calinon (http://calinon.ch):
 
 Calinon, S. (2009)
 Robot Programming by Demonstration: A Probabilistic Approach
