@@ -45,7 +45,7 @@ Report me to b.saduanov@gmail.com if you have any problems.
 
 # Usage
 To use GMM_GMR algorithms copy all python files to your folder. In your main script
-file import GMM_GMR class by writing "from GMM_GMR import GMM_GMR". To create instance
+file import GMM_GMR class by writing ```from GMM_GMR import GMM_GMR```. To create instance
 of GMM_GMR just call its constructor with one parameters which defines number of clusters, for example:
 ```
 gmm = GMM_GMR(4)
