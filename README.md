@@ -9,6 +9,12 @@ EM is an iterative algorithm which converges to true gaussian parameters and sto
 iteration number limit. To initialize gaussian parameters k-means clustering algorithm is used. After GMM is fitted,
 the model is used to fit GMR to retrieve output features by time input.
 
+My associated papers with this project:
+**Saduanov, B.**, Alizadeh, T., An, J., & Abibullaev, B. (2018, January). Trained by demonstration humanoid robot controlled via a BCI system for telepresence. In Brain-Computer Interface (BCI), 2018 6th International Conference on (pp. 1-4). IEEE.
+
+**Saduanov, B.**, Tokmurzina, D., Alizadeh, T., & Abibullaev, B. (2018, March). Brain-Computer Interface Humanoid Pre-trained for Interaction with People. In Companion of the 2018 ACM/IEEE International Conference on Human-Robot Interaction (pp. 229-230). ACM.
+
+
 All math and concepts are referred from the book and MATLAB implementation both by professor Sylvain Calinon (http://calinon.ch):
 
 Calinon, S. (2009)
